@@ -1,0 +1,29 @@
+{{yield}}
+<div id="tcrrequest-form">
+  PDB:
+  <select class="ember-select" id="pdb" {{on 'change' this.updatePDB}}>
+    <option value="None">None</option>
+    {{#each @pdblist as |pdb|}}
+      <option value={{pdb}}>{{pdb}}</option>
+    {{/each}}
+  </select>
+  Action 1:
+  <select class="ember-select" id="action1" {{on 'change' this.updateValue1}}>
+    {{#each @pdbactions as |action|}}
+      <option value={{action.method}}>{{action.name}}</option>
+    {{/each}}
+  </select>
+  Action 2:
+  <select class="ember-select" id="action2" {{on 'change' this.updateValue2}}>
+    {{#each @pdbactions as |action|}}
+      <option value={{action.method}}>{{action.name}}</option>
+    {{/each}}
+  </select>
+  Action 3:
+  <select class="ember-select" id="action3" {{on 'change' this.updateValue3}}>
+    {{#each @pdbactions as |action|}}
+      <option value={{action.method}}>{{action.name}}</option>
+    {{/each}}
+  </select>
+  <button type="button" {{on "click" this.tcrrequest}}>Perform</button>
+</div>

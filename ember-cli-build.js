@@ -1,11 +1,17 @@
 'use strict';
 
 const EmberApp = require('ember-cli/lib/broccoli/ember-app');
+const { app } = require('ember-cli-sass');
 
 module.exports = function (defaults) {
   const app = new EmberApp(defaults, {
-    // Add options here
+    'ember-bootstrap': {
+      bootstrapVersion: 5,
+      importBootstrapCSS: true,
+    },
   });
+
+  // app.import('node_modules/bio-pv/bio-pv.min.js');
 
   // Use `app.import` to add additional libraries to the generated
   // output files.

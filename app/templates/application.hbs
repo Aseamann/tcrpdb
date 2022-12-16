@@ -1,7 +1,32 @@
 {{page-title "Tcrpdb"}}
 
-{{!-- The following component displays Ember's default welcome message. --}}
-<WelcomePage />
-{{!-- Feel free to remove this! --}}
+<BsNavbar
+  @type="dark"
+  @backgroundColor="dark"
+  as |navbar|
+>
+  <LinkTo @route="index" class="navbar-brand">TCRpdbTools</LinkTo>
+  <navbar.toggle/>
+  <navbar.content>
+    <navbar.nav as |nav|>
+      <nav.dropdown as |dd|>
+        <dd.toggle>Jump To <span class="caret"></span></dd.toggle>
+        <dd.menu as |ddm|>
+          <ddm.item>
+            <ddm.link-to @route="index">Home</ddm.link-to>
+          </ddm.item>
+          <ddm.item>
+            <ddm.link-to @route="index">Other</ddm.link-to>
+          </ddm.item>
+        </dd.menu>
+      </nav.dropdown>
+      <nav.item>
+        <a class="nav-link" href="https://github.com/Aseamann/tcr-pdb-tools" target="_blank" rel="noopener noreferrer">
+          <span>Source Code</span>
+        </a>
+      </nav.item>
+    </navbar.nav>
+  </navbar.content>
+</BsNavbar>
 
 {{outlet}}

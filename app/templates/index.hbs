@@ -1,0 +1,9 @@
+{{page-title "Index"}}
+<div class="container">
+  <img src="/static/Images/TCR_InMembrane.png" alt="Render of a T-cell Receptor integrated in a cell-membrane.">
+  <div class="text">Modify T-cell Receptor PDB Data</div>
+</div>
+<ProteinViewer/>
+<TcrrequestForm @pdbactions={{@model.pdbactions}} @pdblist={{@model.pdblist}}/>
+
+{{outlet}}
